@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'cvfs43!(c5m9m4qf-86(7jf0gafd9*ab35b*2vghsm^xvaspm1'
+SECRET_KEY = '0fz%&!=iarak$hxe1-(fcrhpf%x89^l=chwf%nq18@vdz%o6&p'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app.apps.AppConfig',
 ]
 
 MIDDLEWARE = [
@@ -77,8 +76,11 @@ WSGI_APPLICATION = 'MyBlog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': "testdjango",
+        'USER': "root",
+        'PASSWORD': "123123",
+        'HOST': "127.0.0.1"
     }
 }
 
@@ -115,8 +117,13 @@ USE_L10N = True
 
 USE_TZ = True
 
-
+#===========================================================================
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
+
+#===========================================================================
